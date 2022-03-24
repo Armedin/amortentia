@@ -68,7 +68,7 @@ const InstagramPhotos = () => {
     <Box sx={{ position: 'relative' }}>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         {photos.map(photo => (
-          <PhotoWrapper>
+          <PhotoWrapper key={photo.src}>
             <a href="#">
               <img src={photo.src} />
               <div className="photo-overlay">
