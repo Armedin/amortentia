@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Regular'),
+    url('../assets/fonts/poppins-regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Medium'),
+    url('../assets/fonts/poppins-medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Bold'),
+    url('../assets/fonts/poppins-bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'MinervaModern';
+  src: local('MinervaModern Regular'),
+    url('../assets/fonts/minervaModern-regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'MinervaModern';
+  src: local('MinervaModern Bold'),
+    url('../assets/fonts/minervaModern-bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}

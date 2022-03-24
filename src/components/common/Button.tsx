@@ -1,0 +1,40 @@
+import React, { FC } from 'react';
+import styled from '@emotion/styled';
+import {
+  Button as KukuiButton,
+  ButtonProps as KukuiButtonProps,
+} from '@kukui/ui';
+
+interface ButtonProps extends KukuiButtonProps {}
+
+const StyledButton = styled(KukuiButton)<ButtonProps>(
+  {
+    backgroundColor: '#333',
+    color: '#fff',
+    fontWeight: 600,
+    textTransform: 'uppercase',
+    letterSpacing: '1.2px',
+    fontSize: '12px',
+    borderRadius: 0,
+    padding: '14px 30px',
+    height: 'auto',
+  },
+  props => ({
+    ...(props.color === 'primary' && {
+      backgroundColor: 'var(--text-primary)',
+      '&:hover': {
+        backgroundColor: '#333',
+      },
+    }),
+  })
+);
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (props, ref) => {
+    return <StyledButton {...props} ref={ref} />;
+  }
+);
+
+Button.displayName = 'Button';
+
+export default Button;
