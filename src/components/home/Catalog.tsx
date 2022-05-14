@@ -1,6 +1,7 @@
 import Button from '@components/common/Button';
 import { Box, Typography, Container } from '@kukui/ui';
 import styled from '@emotion/styled';
+import { useEffect, useRef } from 'react';
 
 const ViewMoreButton = styled(Button)({
   color: '#333',
@@ -8,6 +9,30 @@ const ViewMoreButton = styled(Button)({
   border: '1px solid #333',
 });
 const Catalog = () => {
+  const imgRef = useRef<HTMLElement>(null);
+  const infoRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    async function animate() {
+      const sr = (await import('scrollreveal')).default;
+
+      sr().reveal(imgRef.current, {
+        origin: 'left',
+        distance: '60px',
+        duration: 2500,
+        delay: 250,
+      });
+
+      sr().reveal(infoRef.current, {
+        origin: 'right',
+        distance: '60px',
+        duration: 2500,
+        delay: 250,
+      });
+    }
+    animate();
+  }, []);
+
   return (
     <Box sx={{ padding: '60px 0', backgroundColor: '#eae9de' }}>
       <Container>
@@ -18,14 +43,14 @@ const Catalog = () => {
             gap: '80px',
           }}
         >
-          <Box>
+          <Box ref={imgRef}>
             <img
               src="https://www.just.it/wp-content/uploads/2021/12/Catalogo-Just_ITA.png"
               style={{ width: '100%', height: 'auto' }}
             />
           </Box>
 
-          <Box sx={{ marginTop: '80px' }}>
+          <Box sx={{ marginTop: '80px' }} ref={infoRef}>
             <Typography
               variant="h2"
               sx={{

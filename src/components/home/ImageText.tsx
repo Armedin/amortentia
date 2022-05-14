@@ -1,6 +1,8 @@
 import { Box, Container, Typography } from '@kukui/ui';
 import styled from '@emotion/styled';
 import Button from '@components/common/Button';
+import { useEffect, useRef } from 'react';
+import { ImageAppearFromTop } from '@components/animations';
 
 const ShopNowButton = styled(Button)({
   color: '#333',
@@ -20,6 +22,32 @@ const Description = styled(Typography)({
 });
 
 const ImageText = () => {
+  const titleRef = useRef<HTMLElement>(null);
+  const title2Ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    async function animate() {
+      const sr = (await import('scrollreveal')).default;
+      sr().reveal(titleRef.current, {
+        origin: 'right',
+        distance: '60px',
+        duration: 2500,
+        delay: 250,
+      });
+      sr().reveal(title2Ref.current, {
+        origin: 'left',
+        distance: '60px',
+        duration: 2500,
+        delay: 250,
+      });
+
+      return () => {
+        sr().destroy();
+      };
+    }
+    animate();
+  }, []);
+
   return (
     <>
       <Box sx={{ padding: '80px 0' }}>
@@ -32,10 +60,12 @@ const ImageText = () => {
             }}
           >
             <Box sx={{ gridColumn: 'span 7/span 7' }}>
-              <img
-                src="https://klbtheme.com/cosmetsy/wp-content/uploads/2021/02/image-text.jpg"
-                style={{ width: '100%', height: 'auto' }}
-              />
+              <ImageAppearFromTop>
+                <img
+                  src="https://klbtheme.com/cosmetsy/wp-content/uploads/2021/02/image-text.jpg"
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </ImageAppearFromTop>
             </Box>
             <Box
               sx={{
@@ -50,6 +80,7 @@ const ImageText = () => {
                     marginLeft: '-220px',
                   }}
                   variant="h2"
+                  ref={titleRef}
                 >
                   Open your mind to the possibility of you. For skin that looks
                   professional
@@ -83,6 +114,7 @@ const ImageText = () => {
                   marginRight: '-300px',
                 }}
                 variant="h2"
+                ref={title2Ref}
               >
                 No science experiments. Just great skincare. Touch your beauty
               </Title>
@@ -102,7 +134,9 @@ const ImageText = () => {
               }}
             >
               <Box sx={{ padding: '0 35x', marginTop: '90px' }}>
-                <img src="https://klbtheme.com/cosmetsy/wp-content/uploads/2021/02/image-text2.jpg" />
+                <ImageAppearFromTop>
+                  <img src="https://klbtheme.com/cosmetsy/wp-content/uploads/2021/02/image-text2.jpg" />
+                </ImageAppearFromTop>
               </Box>
             </Box>
           </Box>
