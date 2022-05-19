@@ -7,25 +7,25 @@ import 'swiper/css/pagination';
 const products = [
   {
     name: 'Essential Paper Bag',
-    price: '25.990 ALL',
+    price: '€25.99',
     imageUrl:
       'https://wpbingosite.com/wordpress/covan/wp-content/uploads/2020/04/Image-41.jpg',
   },
   {
     name: 'Baby Bum Shampoo & Wash',
-    price: '31.990 ALL',
+    price: '€31.99',
     imageUrl:
       'https://wpbingosite.com/wordpress/covan/wp-content/uploads/2020/04/Image-42.jpg',
   },
   {
     name: "Nature's Friend Lotion",
-    price: '12.990 ALL',
+    price: '€12.99',
     imageUrl:
       'https://wpbingosite.com/wordpress/covan/wp-content/uploads/2020/04/Image-40.jpg',
   },
   {
     name: 'Makeup Cleansing Cream',
-    price: '22.990 ALL',
+    price: '€22.99',
     imageUrl:
       'https://wpbingosite.com/wordpress/covan/wp-content/uploads/2020/04/Image-43.jpg',
   },

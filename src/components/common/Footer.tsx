@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Box, Container, Typography } from '@kukui/ui';
-import { Phone, LocationPin, Envelope } from '@kukui/icons';
+import { Phone, Envelope, LocationDot } from '@kukui/icons';
 
 const NavigationLinks = styled('ul')({
   li: {
@@ -18,10 +18,9 @@ const Footer = () => {
     <>
       <Box
         sx={{
-          backgroundColor: '#222',
-          color: 'rgba(255, 255, 255, 90%)',
+          backgroundColor: '#f8f8f8',
           padding: '85px 0 75px 0',
-          fontSize: '13px',
+          fontSize: '14px',
         }}
         className="footer"
       >
@@ -51,7 +50,7 @@ const Footer = () => {
               </Typography>
 
               <ContactItem>
-                <LocationPin sx={{ marginRight: '6px' }} fontSize="sm" />
+                <LocationDot sx={{ marginRight: '6px' }} fontSize="sm" />
                 9870 St Vincent Place, Glasgow, DC 45
               </ContactItem>
               <ContactItem>
@@ -95,10 +94,9 @@ const Footer = () => {
 
       <Box
         sx={{
-          backgroundColor: '#d6a044',
-          color: '#fff',
+          backgroundColor: '#f8f8f8',
           padding: '14px 0',
-          fontSize: '12px',
+          fontSize: '13px',
         }}
       >
         <Container>© Amortentia | Developed by Armedin Kuka</Container>

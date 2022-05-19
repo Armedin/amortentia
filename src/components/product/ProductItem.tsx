@@ -38,17 +38,23 @@ const ProductItem = ({ product }: { product: any }) => {
       <Box
         sx={{
           marginTop: '14px',
-          fontSize: '1.075rem',
+          fontSize: '1rem',
           textAlign: 'center',
+          fontWeight: '500',
           lineHeight: '1.5',
         }}
       >
-        <a>{product.name}</a>
         <Box
-          sx={{ marginTop: '6px', textAlign: 'center', fontSize: '0.95rem' }}
+          sx={{
+            marginTop: '6px',
+            textAlign: 'center',
+            fontSize: '1rem',
+            fontWeight: 700,
+          }}
         >
           {product.price}
         </Box>
+        <a>{product.name}</a>
       </Box>
     </Box>
   );

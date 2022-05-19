@@ -8,6 +8,7 @@ const Breadcrumb = styled(Box)({
   color: '#778379',
   lineHeight: 1,
   fontSize: '0.875rem',
+  fontWeight: 500,
   width: '100%',
   padding: '25px 0 40px',
   a: {

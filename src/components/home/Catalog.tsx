@@ -4,9 +4,9 @@ import styled from '@emotion/styled';
 import { useEffect, useRef } from 'react';
 
 const ViewMoreButton = styled(Button)({
-  color: '#333',
+  color: '#222',
   backgroundColor: 'transparent',
-  border: '1px solid #333',
+  border: '1px solid #222',
 });
 const Catalog = () => {
   const imgRef = useRef<HTMLElement>(null);

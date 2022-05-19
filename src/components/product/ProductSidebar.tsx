@@ -101,9 +101,9 @@ const ProductSidebar = () => {
         </IconButton>
       </Box>
       <Typography
-        sx={{ fontSize: '1.2rem', fontWeight: 600, marginTop: '10px' }}
+        sx={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '10px' }}
       >
-        31.990 ALL
+        €31.99
       </Typography>
 
       <Box sx={{ margin: '30px 0', color: '#555' }}>
@@ -113,7 +113,7 @@ const ProductSidebar = () => {
       </Box>
 
       <Button fullWidth color="primary">
-        Add To Cart - 31.990 ALL
+        Add To Cart - €31.99
       </Button>
 
       <Box
@@ -165,7 +165,7 @@ const ProductSidebar = () => {
           <TruckFast />
           <Box>
             <Box className="title">Flat Rate Shipping*</Box>
-            <Box className="desc">Delivery as low as $39</Box>
+            <Box className="desc">Delivery as low as €2.00</Box>
           </Box>
         </ShippingItem>
         <ShippingItem sx={{ borderLeft: '1px solid #d8d8d8' }}>

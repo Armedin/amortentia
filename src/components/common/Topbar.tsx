@@ -4,7 +4,7 @@ import { Heart, BookOpen } from '@kukui/icons';
 import Link from 'next/link';
 
 const StyledTopbar = styled(Box)({
-  background: '#080808',
+  background: '#4e7661',
   color: '#e8ebf0',
   fontSize: '12px',
   height: '40px',

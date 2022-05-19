@@ -3,6 +3,20 @@ import { Box } from '@kukui/ui';
 import Parallax from 'parallax-js';
 import { useEffect, useRef } from 'react';
 
+const Container = styled(Box)({
+  backgroundColor: '#f6f6f6',
+  overflow: 'hidden',
+
+  '&:after': {
+    content: '""',
+    background: 'linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255))',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    height: '120px',
+  },
+});
 const ParallaxLayer = styled(Box)({
   width: '100%',
   backgroundRepeat: 'no-repeat',
@@ -37,7 +51,7 @@ const ParallaxScene = () => {
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: '#f6f6f6', overflow: 'hidden' }} ref={sceneRef}>
+    <Container ref={sceneRef}>
       <ParallaxLayer data-depth="0.1">
         <img src="https://www.just.it/wp-content/uploads/2020/09/parallax-00-montagna.png" />
       </ParallaxLayer>
@@ -47,7 +61,7 @@ const ParallaxScene = () => {
       <ParallaxLayer data-depth="0.22">
         <img src="https://www.just.it/wp-content/uploads/2020/09/parallax-02-prodotti.png" />
       </ParallaxLayer>
-    </Box>
+    </Container>
   );
 };
 

@@ -9,21 +9,21 @@ interface ButtonProps extends KukuiButtonProps {}
 
 const StyledButton = styled(KukuiButton)<ButtonProps>(
   {
-    backgroundColor: '#333',
+    backgroundColor: '#222',
     color: '#fff',
     fontWeight: 600,
     textTransform: 'uppercase',
     letterSpacing: '1.2px',
     fontSize: '12px',
     borderRadius: 0,
-    padding: '14px 30px',
+    padding: '15.5px 30px',
     height: 'auto',
   },
   props => ({
     ...(props.color === 'primary' && {
       backgroundColor: 'var(--text-primary)',
       '&:hover': {
-        backgroundColor: '#333',
+        backgroundColor: '#222',
       },
     }),
   })

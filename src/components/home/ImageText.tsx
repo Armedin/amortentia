@@ -5,9 +5,9 @@ import { useEffect, useRef } from 'react';
 import { ImageAppearFromTop } from '@components/animations';
 
 const ShopNowButton = styled(Button)({
-  color: '#333',
+  color: '#222',
   backgroundColor: 'transparent',
-  border: '1px solid #333',
+  border: '1px solid #222',
 });
 
 const Title = styled(Typography)({

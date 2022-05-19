@@ -1,52 +1,51 @@
 import Button from '@components/common/Button';
 import styled from '@emotion/styled';
 import { Box, Typography } from '@kukui/ui';
+import { useEffect, useRef } from 'react';
 
 const Content = styled('div')({
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  maxWidth: '450px',
+  width: 'calc(75%)',
 });
 
 const Welcome = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    async function animate() {
+      const sr = (await import('scrollreveal')).default;
+
+      sr().reveal(containerRef.current, {
+        origin: 'bottom',
+        distance: '20px',
+        duration: 1000,
+        delay: 250,
+      });
+    }
+    animate();
+  }, []);
+
   return (
     <Box
-      sx={{ backgroundColor: '#f6f6f6', height: '48vh', position: 'relative' }}
+      sx={{ backgroundColor: '#f6f6f6', height: '38vh', position: 'relative' }}
     >
-      <Content>
-        <Typography
-          variant="h5"
-          sx={{
-            color: 'var(--text-primary)',
-            textTransform: 'uppercase',
-            fontSize: '12px',
-            letterSpacing: '2px',
-            fontWeight: 600,
-            textAlign: 'center',
-          }}
-        >
-          Welcome to
-        </Typography>
+      <Content ref={containerRef}>
         <Typography
           variant="h1"
           sx={{
-            color: '#333',
-            fontSize: '63px',
-            marginBottom: '.75rem',
+            color: '#222',
+            fontSize: '45px',
+            marginBottom: '2.5rem',
             textAlign: 'center',
             lineHeight: 1.2,
-            fontFamily: 'Poppins',
           }}
         >
-          Amortentia
+          Natural tradition, method and wisdom
         </Typography>
-        <Typography sx={{ color: '#666', textAlign: 'center' }}>
-          Our products are 100% homemade authentic. We strive to provide you
-          with the best products in the market.
-        </Typography>
-        <Box sx={{ marginTop: '1.5rem', textAlign: 'center' }}>
+        <Box sx={{ textAlign: 'center' }}>
           <Button disabled>Explore Products</Button>
         </Box>
       </Content>
