@@ -7,6 +7,11 @@ const ViewMoreButton = styled(Button)({
   color: '#222',
   backgroundColor: 'transparent',
   border: '1px solid #222',
+
+  '&:hover': {
+    color: '#fff',
+    backgroundColor: '#222',
+  },
 });
 const Catalog = () => {
   const imgRef = useRef<HTMLElement>(null);

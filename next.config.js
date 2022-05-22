@@ -31,6 +31,9 @@ const nextConfig = {
     // !! WARN !!
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['wpbingosite.com'],
+  },
 };
 
 module.exports = withTM(nextConfig);
