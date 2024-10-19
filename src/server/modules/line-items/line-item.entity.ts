@@ -35,7 +35,7 @@ export class LineItem {
   @Column()
   title: string;
 
-  @Column()
+  @Column({ type: 'longtext' })
   description: string;
 
   @Column()
