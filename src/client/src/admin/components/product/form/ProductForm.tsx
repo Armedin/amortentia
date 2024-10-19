@@ -17,6 +17,7 @@ import { useRouter } from 'next/router';
 import { ADMIN_ROUTES } from '@admin/utils/routes';
 import ProductDescriptionEditor from './ProductDescriptionEditor';
 import { useRef, useState } from 'react';
+import { useProductForm } from './ProductFormContext';
 
 const ProductDetails = styled(Box)({
   flex: '1 1 100%',
@@ -34,8 +35,12 @@ const ProductForm = ({
 }) => {
   // For now, quick hack to update description using WYSIWYG editor
   const [description, setDescription] = useState(product?.description || '');
+  const [inStock, setInStock] = useState<boolean>(
+    product?.in_stock ? product.in_stock : !isEdit ? true : undefined
+  );
   const inputRef = useRef<any>(null);
   const router = useRouter();
+  const { getValues, setValue } = useProductForm();
 
   return (
     <ProductDetails>
@@ -87,6 +92,24 @@ const ProductForm = ({
             />
           </Box>
           <Properties />
+
+          <Typography
+            variant="h5"
+            sx={{ marginTop: '16px', marginBottom: '6px' }}
+          >
+            In Stock?
+          </Typography>
+
+          <input
+            type="checkbox"
+            name="in_stock"
+            checked={inStock}
+            onChange={e => {
+              setInStock(e.target.checked);
+              setValue('in_stock', e.target.checked);
+            }}
+            style={{ width: 20, height: 20 }}
+          />
         </CardContent>
       </Card>
 

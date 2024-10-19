@@ -23,4 +23,5 @@ export interface Product {
   images?: ProductImage[];
   thumbnail?: string;
   properties?: ProductProperty[];
+  in_stock?: boolean;
 }

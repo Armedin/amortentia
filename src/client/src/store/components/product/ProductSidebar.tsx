@@ -143,6 +143,7 @@ const ProductSidebar = ({ product }: { product: Product }) => {
       <Button
         fullWidth
         color="primary"
+        disabled={!product.in_stock}
         onClick={() => {
           addItemToCart(product.id);
           updateOpenState(true);
@@ -181,7 +182,11 @@ const ProductSidebar = ({ product }: { product: Product }) => {
             <Typography>Ship within 10-15 days in all Europe</Typography>
           </Box>
         </Box>
-        <Box>In Stock, Ships from Albania</Box>
+        {product.in_stock ? (
+          <Box>In Stock, Ships from Albania</Box>
+        ) : (
+          <Box sx={{ color: 'var(--kukui-red)' }}>Out of Stock</Box>
+        )}
       </Box>
 
       <Box sx={{ margin: '36px 0', display: 'flex' }}>

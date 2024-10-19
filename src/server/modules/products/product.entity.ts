@@ -39,6 +39,9 @@ export class Product {
   @IsOptional()
   properties: { name: string; value: string }[];
 
+  @Column({ type: 'boolean', default: true })
+  in_stock: boolean;
+
   @ManyToOne(() => ProductCategory, productCategory => productCategory.products)
   @JoinColumn({ name: 'category_id' })
   category?: ProductCategory;

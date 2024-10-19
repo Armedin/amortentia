@@ -28,6 +28,7 @@ const defaultProduct = {
   images: [],
   category_id: null,
   properties: [],
+  in_stock: true,
 };
 
 export const ProductFormProvider = ({
