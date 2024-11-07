@@ -35,6 +35,8 @@ const ProductItem = ({ product }: { product: Product }) => {
     <Box
       sx={{
         position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
         '&:hover': { img: { transform: 'scale(1.05)' } },
       }}
     >
@@ -43,6 +45,9 @@ const ProductItem = ({ product }: { product: Product }) => {
           position: 'relative',
           overflow: 'hidden',
           textAlign: 'center',
+          flex: '1 1 100%',
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
         <Link href={`/product/${product.id}`}>
